@@ -115,6 +115,7 @@ def process(frame, models):
                removeEyeObjects = False
                eyeObjects.remove(eyeCorrd)
 
+    # 4. Filter eye rectangles
     filterEyeObjects()
 
     for specialObjects in allObjects:
@@ -122,7 +123,7 @@ def process(frame, models):
             for (x, y, w, h) in objects:
                 cv2.rectangle(frame, (x, y), (x + w, y + h), color, 2)  # BGR
 
-    # 4. Return initial color frame with rectangles
+    # 5. Return initial color frame with rectangles
     return frame
 
 def toList(nddArray):
